@@ -1,0 +1,145 @@
+/* Excel-inspired Portfolio Website Styles */
+
+/* General Styles */
+body {
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Excel Cell Hover Effect */
+.excel-cell:hover {
+    background-color: #EBF1DE;
+}
+
+/* Excel Grid Lines */
+.excel-grid {
+    background-size: 50px 50px;
+    background-image:
+        linear-gradient(to right, #D4D4D4 1px, transparent 1px),
+        linear-gradient(to bottom, #D4D4D4 1px, transparent 1px);
+}
+
+/* Excel Cell Selection Effect */
+.cell-selected {
+    outline: 2px solid #217346;
+    outline-offset: -2px;
+    position: relative;
+}
+
+.cell-selected::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 8px;
+    height: 8px;
+    background-color: #217346;
+    border: 1px solid white;
+}
+
+/* Excel Formula Bar */
+.formula-bar {
+    border: 1px solid #D4D4D4;
+    padding: 4px 8px;
+    background-color: white;
+}
+
+/* Excel Sheet Tab */
+.sheet-tab {
+    border: 1px solid #D4D4D4;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    padding: 4px 12px;
+    background-color: #F2F2F2;
+}
+
+.sheet-tab.active {
+    background-color: white;
+    font-weight: bold;
+}
+
+/* Excel-like animations */
+.excel-animate {
+    transition: all 0.2s ease;
+}
+
+/* Progress bars for skills */
+.progress-bar {
+    height: 20px;
+    background-color: #E2EFDA;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #217346;
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+/* Gamification elements */
+.achievement {
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #FFFDE7;
+    transition: transform 0.3s ease;
+}
+
+.achievement:hover {
+    transform: scale(1.05);
+}
+
+.achievement-icon {
+    font-size: 24px;
+    color: #FFD700;
+}
+
+/* Tooltip styles */
+.excel-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.excel-tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.excel-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .excel-grid {
+        background-size: 30px 30px;
+    }
+}

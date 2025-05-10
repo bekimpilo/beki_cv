@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio | Excel-Inspired</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        excel: {
+                            green: '#217346',
+                            lightGreen: '#E2EFDA',
+                            darkGreen: '#1E6C41',
+                            gray: '#F2F2F2',
+                            border: '#D4D4D4',
+                            hover: '#E6E6E6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Calibri', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-excel-gray min-h-screen">
+    <!-- Excel-inspired Header/Navigation -->
+    <header class="bg-excel-green text-white shadow-md">
+        <div class="container mx-auto px-4 py-2">
+            <!-- Excel-like Tabs -->
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="mr-8">
+                        <h1 class="text-xl font-bold">Portfolio.xlsx</h1>
+                    </div>
+                    <nav class="hidden md:flex">
+                        <ul class="flex space-x-1">
+                            <li class="bg-white text-excel-green px-4 py-2 rounded-t-lg font-semibold"><a href="#home">Home</a></li>
+                            <li class="px-4 py-2 hover:bg-excel-darkGreen cursor-pointer"><a href="#projects" class="text-white">Projects</a></li>
+                            <li class="px-4 py-2 hover:bg-excel-darkGreen cursor-pointer"><a href="#skills" class="text-white">Skills</a></li>
+                            <li class="px-4 py-2 hover:bg-excel-darkGreen cursor-pointer"><a href="#experience" class="text-white">Experience</a></li>
+                            <li class="px-4 py-2 hover:bg-excel-darkGreen cursor-pointer"><a href="#contact" class="text-white">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-2 pb-2">
+                <a href="#home" class="block py-2 px-4 text-sm hover:bg-excel-darkGreen">Home</a>
+                <a href="#projects" class="block py-2 px-4 text-sm hover:bg-excel-darkGreen">Projects</a>
+                <a href="#skills" class="block py-2 px-4 text-sm hover:bg-excel-darkGreen">Skills</a>
+                <a href="#experience" class="block py-2 px-4 text-sm hover:bg-excel-darkGreen">Experience</a>
+                <a href="#contact" class="block py-2 px-4 text-sm hover:bg-excel-darkGreen">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section with Excel Sheet Look -->
+        <section id="home" class="bg-white rounded-md shadow-md mb-8 overflow-hidden">
+            <!-- Excel-like toolbar -->
+            <div class="bg-excel-gray border-b border-excel-border px-4 py-2 flex items-center">
+                <div class="flex space-x-2 text-sm text-gray-600">
+                    <button class="hover:bg-excel-hover px-2 py-1 rounded">File</button>
+                    <button class="hover:bg-excel-hover px-2 py-1 rounded">Home</button>
+                    <button class="hover:bg-excel-hover px-2 py-1 rounded">Insert</button>
+                    <button class="hover:bg-excel-hover px-2 py-1 rounded">Data</button>
+                    <button class="hover:bg-excel-hover px-2 py-1 rounded">View</button>
+                </div>
+            </div>
+            
+            <!-- Excel-like content area -->
+            <div class="p-6">
+                <div class="grid grid-cols-12 border-b border-excel-border py-2">
+                    <div class="col-span-1 font-bold text-center">A</div>
+                    <div class="col-span-11 font-bold pl-4">About Me</div>
+                </div>
+                
+                <!-- USER CONFIGURABLE: Edit your introduction here -->
+                <div class="grid grid-cols-12 border-b border-excel-border">
+                    <div class="col-span-1 bg-excel-gray text-center py-2 font-semibold">1</div>
+                    <div class="col-span-11 p-4">
+                        <h2 class="text-2xl font-bold text-excel-green mb-4">Hello, I'm <span id="userName">Your Name</span></h2>
+                        <p class="mb-4">I am a data analyst with expertise in transforming complex datasets into actionable insights. My passion lies in using data visualization and statistical analysis to solve business problems.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-excel-lightGreen text-excel-green px-3 py-1 rounded-full text-sm">Excel</span>
+                            <span class="bg-excel-lightGreen text-excel-green px-3 py-1 rounded-full text-sm">SQL</span>
+                            <span class="bg-excel-lightGreen text-excel-green px-3 py-1 rounded-full text-sm">Tableau</span>
+                            <span class="bg-excel-lightGreen text-excel-green px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-excel-lightGreen text-excel-green px-3 py-1 rounded-full text-sm">R</span>
+                            <span class="bg-excel-lightGreen text-excel-green px-3 py-1 rounded-full text-sm">Power BI</span>
+                        </div>
+                        <a href="./CV.pdf" id="resume-link" download class="inline-block bg-excel-green hover:bg-excel-darkGreen text-white px-6 py-2 rounded transition-colors cursor-pointer">Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="bg-white rounded-md shadow-md mb-8 overflow-hidden">
+            <!-- Excel-like header -->
+            <div class="bg-excel-lightGreen border-b border-excel-border px-4 py-2">
+                <h2 class="text-xl font-bold text-excel-green">Projects</h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- Project Grid - USER CONFIGURABLE: Add your projects here -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="border border-excel-border rounded-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-excel-gray px-4 py-2 border-b border-excel-border">
+                            <h3 class="font-bold">Project 1</h3>
+                        </div>
+                        <div class="p-4">
+                            <div class="mb-4 bg-gray-200 rounded-md overflow-hidden">
+                                <img src="https://via.placeholder.com/600x300?text=Sales+Data+Analysis" alt="Sales Data Analysis" class="w-full h-auto">
+                            </div>
+                            <p class="text-gray-600 mb-2">Sales Data Analysis</p>
+                            <p class="mb-4">Analyzed 5 years of sales data to identify trends and opportunities, resulting in 15% revenue growth.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-excel-lightGreen text-excel-green px-2 py-1 rounded text-xs">Excel</span>
+                                    <span class="bg-excel-lightGreen text-excel-green px-2 py-1 rounded text-xs">Power BI</span>
+                                </div>
+                                <a href="#" class="text-excel-green hover:underline text-sm">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="border border-excel-border rounded-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-excel-gray px-4 py-2 border-b border-excel-border">
+                            <h3 class="font-bold">Project 2</h3>
+                        </div>
+                        <div class="p-4">
+                            <div class="mb-4 bg-gray-200 rounded-md overflow-hidden">
+                                <img src="https://via.placeholder.com/600x300?text=Customer+Segmentation" alt="Customer Segmentation" class="w-full h-auto">
+                            </div>
+                            <p class="text-gray-600 mb-2">Customer Segmentation</p>
+                            <p class="mb-4">Developed customer segments using clustering algorithms to optimize marketing campaigns.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-excel-lightGreen text-excel-green px-2 py-1 rounded text-xs">Python</span>
+                                    <span class="bg-excel-lightGreen text-excel-green px-2 py-1 rounded text-xs">SQL</span>
+                                </div>
+                                <a href="#" class="text-excel-green hover:underline text-sm">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="border border-excel-border rounded-md overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="bg-excel-gray px-4 py-2 border-b border-excel-border">
+                            <h3 class="font-bold">Project 3</h3>
+                        </div>
+                        <div class="p-4">
+                            <div class="mb-4 bg-gray-200 rounded-md overflow-hidden">
+                                <img src="https://via.placeholder.com/600x300?text=Forecasting+Model" alt="Forecasting Model" class="w-full h-auto">
+                            </div>
+                            <p class="text-gray-600 mb-2">Forecasting Model</p>
+                            <p class="mb-4">Built a time-series forecasting model that improved inventory planning by 22%.</p>
+                            <div class="flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <span class="bg-excel-lightGreen text-excel-green px-2 py-1 rounded text-xs">Data Analysis</span>
+                                    <span class="bg-excel-lightGreen text-excel-green px-2 py-1 rounded text-xs">Visualization</span>
+                                </div>
+                                <a href="#" class="text-excel-green hover:underline text-sm">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="bg-white rounded-md shadow-md mb-8 overflow-hidden">
+            <!-- Excel-like header -->
+            <div class="bg-excel-lightGreen border-b border-excel-border px-4 py-2">
+                <h2 class="text-xl font-bold text-excel-green">Skills</h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- Skills Grid - USER CONFIGURABLE: Edit your skills in the main.js file -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="skills-container">
+                    <!-- Skills will be populated from JavaScript -->
+                    <!-- Example Skills -->
+                    <div class="border border-excel-border rounded-md overflow-hidden excel-cell p-4 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3 text-excel-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">Excel</h3>
+                        <p class="text-gray-600 mt-2">Advanced data analysis, pivot tables, and financial modeling</p>
+                    </div>
+                    
+                    <div class="border border-excel-border rounded-md overflow-hidden excel-cell p-4 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3 text-excel-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1 3 3 3h10c2 0 3-1 3-3V7c0-2-1-3-3-3H7c-2 0-3 1-3 3z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17l6-6" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 11l6 6" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">SQL</h3>
+                        <p class="text-gray-600 mt-2">Database queries, data extraction, and manipulation</p>
+                    </div>
+                    
+                    <div class="border border-excel-border rounded-md overflow-hidden excel-cell p-4 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3 text-excel-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">Python</h3>
+                        <p class="text-gray-600 mt-2">Data processing, analysis, and machine learning</p>
+                    </div>
+                    
+                    <div class="border border-excel-border rounded-md overflow-hidden excel-cell p-4 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3 text-excel-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">Data Visualization</h3>
+                        <p class="text-gray-600 mt-2">Creating insightful charts and interactive dashboards</p>
+                    </div>
+                    
+                    <div class="border border-excel-border rounded-md overflow-hidden excel-cell p-4 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3 text-excel-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">Power BI</h3>
+                        <p class="text-gray-600 mt-2">Business intelligence and interactive reporting</p>
+                    </div>
+                    
+                    <div class="border border-excel-border rounded-md overflow-hidden excel-cell p-4 flex flex-col items-center text-center">
+                        <div class="text-4xl mb-3 text-excel-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-lg">Statistical Analysis</h3>
+                        <p class="text-gray-600 mt-2">Hypothesis testing, regression analysis, and forecasting</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="bg-white rounded-md shadow-md mb-8 overflow-hidden">
+            <!-- Excel-like header -->
+            <div class="bg-excel-lightGreen border-b border-excel-border px-4 py-2">
+                <h2 class="text-xl font-bold text-excel-green">Experience</h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- Experience Table - USER CONFIGURABLE: Edit your experience in the main.js file -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border-collapse">
+                        <thead>
+                            <tr class="bg-excel-gray">
+                                <th class="border border-excel-border p-2 text-left">Company</th>
+                                <th class="border border-excel-border p-2 text-left">Position</th>
+                                <th class="border border-excel-border p-2 text-left">Period</th>
+                                <th class="border border-excel-border p-2 text-left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="experience-container">
+                            <!-- Experience will be populated from JavaScript -->
+                            <!-- Example Experience -->
+                            <tr class="excel-cell">
+                                <td class="border border-excel-border p-2">Company Name</td>
+                                <td class="border border-excel-border p-2">Senior Data Analyst</td>
+                                <td class="border border-excel-border p-2">Jan 2023 - Present</td>
+                                <td class="border border-excel-border p-2">Lead data analyst responsible for creating dashboards and reports for executive team. Implemented automated reporting system that saved 10 hours per week.</td>
+                            </tr>
+                            <tr class="excel-cell">
+                                <td class="border border-excel-border p-2">Previous Company</td>
+                                <td class="border border-excel-border p-2">Data Analyst</td>
+                                <td class="border border-excel-border p-2">Mar 2020 - Dec 2022</td>
+                                <td class="border border-excel-border p-2">Conducted market analysis and created visualizations to support business decisions. Developed SQL queries to extract and analyze customer data.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="bg-white rounded-md shadow-md mb-8 overflow-hidden">
+            <!-- Excel-like header -->
+            <div class="bg-excel-lightGreen border-b border-excel-border px-4 py-2">
+                <h2 class="text-xl font-bold text-excel-green">Education</h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- Education Table - USER CONFIGURABLE: Edit your education in the main.js file -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border-collapse">
+                        <thead>
+                            <tr class="bg-excel-gray">
+                                <th class="border border-excel-border p-2 text-left">Institution</th>
+                                <th class="border border-excel-border p-2 text-left">Degree</th>
+                                <th class="border border-excel-border p-2 text-left">Period</th>
+                                <th class="border border-excel-border p-2 text-left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="education-container">
+                            <!-- Education will be populated from JavaScript -->
+                            <!-- Example Education -->
+                            <tr class="excel-cell">
+                                <td class="border border-excel-border p-2">University Name</td>
+                                <td class="border border-excel-border p-2">Bachelor of Science in Data Science</td>
+                                <td class="border border-excel-border p-2">2014 - 2018</td>
+                                <td class="border border-excel-border p-2">Graduated with honors. Relevant coursework included statistics, data mining, and machine learning.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="bg-white rounded-md shadow-md mb-8 overflow-hidden">
+            <!-- Excel-like header -->
+            <div class="bg-excel-lightGreen border-b border-excel-border px-4 py-2">
+                <h2 class="text-xl font-bold text-excel-green">Achievements & Certifications</h2>
+            </div>
+            
+            <div class="p-6">
+                <!-- Achievements Table - USER CONFIGURABLE: Edit your achievements in the main.js file -->
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border-collapse">
+                        <thead>
+                            <tr class="bg-excel-gray">
+                                <th class="border border-excel-border p-2 text-left">Certification</th>
+                                <th class="border border-excel-border p-2 text-left">Issuer</th>
+                                <th class="border border-excel-border p-2 text-left">Date</th>
+                                <th class="border border-excel-border p-2 text-left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="achievements-container">
+                            <!-- Achievements will be populated from JavaScript -->
+                            <!-- Example Achievements -->
+                            <tr class="excel-cell">
+                                <td class="border border-excel-border p-2">Microsoft Certified: Data Analyst Associate</td>
+                                <td class="border border-excel-border p-2">Microsoft</td>
+                                <td class="border border-excel-border p-2">2022</td>
+                                <td class="border border-excel-border p-2">Certification validating skills in preparing, modeling, visualizing, and analyzing data using Microsoft Power BI.</td>
+                            </tr>
+                            <tr class="excel-cell">
+                                <td class="border border-excel-border p-2">Google Data Analytics Professional Certificate</td>
+                                <td class="border border-excel-border p-2">Google</td>
+                                <td class="border border-excel-border p-2">2021</td>
+                                <td class="border border-excel-border p-2">Comprehensive program covering the entire data analysis process.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white rounded-md shadow-md mb-8 overflow-hidden">
+            <!-- Excel-like header -->
+            <div class="bg-excel-lightGreen border-b border-excel-border px-4 py-2">
+                <h2 class="text-xl font-bold text-excel-green">Contact</h2>
+            </div>
+            
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Contact Information - USER CONFIGURABLE: Edit your contact info in the main.js file -->
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Get in Touch</h3>
+                        <div class="space-y-3">
+                            <p><span class="font-semibold">Email:</span> <span id="contact-email">your.email@example.com</span></p>
+                            <p><span class="font-semibold">Phone:</span> <span id="contact-phone">+1 (123) 456-7890</span></p>
+                            <p><span class="font-semibold">Location:</span> <span id="contact-location">City, Country</span></p>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h3 class="text-lg font-bold mb-4">Connect</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" id="linkedin-link" class="text-excel-green hover:text-excel-darkGreen">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" id="github-link" class="text-excel-green hover:text-excel-darkGreen">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                                <a href="#" id="twitter-link" class="text-excel-green hover:text-excel-darkGreen">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form with Webhook Integration -->
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Send a Message</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-excel-border rounded-md focus:outline-none focus:ring-2 focus:ring-excel-green" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-excel-border rounded-md focus:outline-none focus:ring-2 focus:ring-excel-green" required>
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-3 py-2 border border-excel-border rounded-md focus:outline-none focus:ring-2 focus:ring-excel-green" required>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-excel-border rounded-md focus:outline-none focus:ring-2 focus:ring-excel-green" required></textarea>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full bg-excel-green hover:bg-excel-darkGreen text-white py-2 px-4 rounded-md transition-colors">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-excel-green text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>© <span id="currentYear">2025</span> - Data Analyst Portfolio</p>
+                </div>
+                <!-- USER CONFIGURABLE: Edit your social links here -->
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-excel-lightGreen transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-excel-lightGreen transition-colors">GitHub</a>
+                    <a href="#" class="hover:text-excel-lightGreen transition-colors">Twitter</a>
+                    <a href="#" class="hover:text-excel-lightGreen transition-colors">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
