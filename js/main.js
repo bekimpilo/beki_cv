@@ -4,9 +4,10 @@
 // Edit this section to customize your portfolio
 const userConfig = {
     // Personal Information
-    name: "Sven Bosau",
+    name: "John Doe",
     title: "Data Analyst",
     bio: "I am a data analyst with expertise in transforming complex datasets into actionable insights. My passion lies in using data visualization and statistical analysis to solve business problems.",
+    profilePhoto: "./images/profile-photo.png",
     
     // Contact Information
     email: "your.email@example.com",
@@ -14,15 +15,15 @@ const userConfig = {
     location: "City, Country",
     
     // Social Media Links
-    linkedin: "https://linkedin.com/in/yourusername",
-    github: "https://github.com/Sven-Bosau",
-    twitter: "https://twitter.com/yourusername",
+    linkedin: "https://linkedin.com/in/sven-bosau",
+    github: "https://github.com/Sven-Bo",
+    x: "https://x.com/yourusername",
     
     // Resume Link
-    resumeLink: "./CV.pdf",
+    resumeLink: "./assets/CV.pdf",
     
     // Webhook URL for contact form
-    webhookUrl: "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjYwNTY4MDYzMDA0MzE1MjY0NTUzNjUxMzci_pc",
+    webhookUrl: "YOUR_WEBHOOK_URL",
     
     // Skills with descriptions
     skills: [
@@ -64,19 +65,22 @@ const userConfig = {
             title: "Sales Data Analysis",
             description: "Analyzed 5 years of sales data to identify trends and opportunities, resulting in 15% revenue growth.",
             tags: ["Excel", "Power BI"],
-            link: "#"
+            link: "https://pythonandvba.com",
+            image: "./images/sales-analysis.jpg"
         },
         {
             title: "Customer Segmentation",
             description: "Developed customer segments using clustering algorithms to optimize marketing campaigns.",
             tags: ["Python", "SQL"],
-            link: "#"
+            link: "https://pythonandvba.com",
+            image: "./images/customer-segmentation.jpg"
         },
         {
             title: "Forecasting Model",
             description: "Built a time-series forecasting model that improved inventory planning by 22%.",
             tags: ["R", "Tableau"],
-            link: "#"
+            link: "https://pythonandvba.com",
+            image: "./images/forecasting-model.jpg"
         }
     ],
     
@@ -154,6 +158,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializePage() {
     // This function is now replaced by individual population functions
     setupNavigation();
+    populateProjects();
+    setupMobileMenu();
 }
 
 // Populate contact information
@@ -166,11 +172,11 @@ function populateContactInfo() {
     // Update social links
     const linkedinLink = document.getElementById('linkedin-link');
     const githubLink = document.getElementById('github-link');
-    const twitterLink = document.getElementById('twitter-link');
+    const xLink = document.getElementById('x-link');
     
     if (linkedinLink) linkedinLink.href = userConfig.linkedin;
     if (githubLink) githubLink.href = userConfig.github;
-    if (twitterLink) twitterLink.href = userConfig.twitter;
+    if (xLink) xLink.href = userConfig.x;
 }
 
 // Populate skills section
@@ -245,20 +251,58 @@ function populateAchievements() {
     const achievementsContainer = document.getElementById('achievements-container');
     if (!achievementsContainer) return;
     
-    // Clear existing achievements
+    // Clear existing content
     achievementsContainer.innerHTML = '';
     
-    // Add achievements from user configuration
+    // Add each achievement from config
     userConfig.achievements.forEach(achievement => {
-        const achievementElement = document.createElement('tr');
-        achievementElement.className = 'excel-cell';
-        achievementElement.innerHTML = `
+        const achievementRow = document.createElement('tr');
+        achievementRow.className = 'excel-cell';
+        
+        achievementRow.innerHTML = `
             <td class="border border-excel-border p-2">${achievement.title}</td>
             <td class="border border-excel-border p-2">${achievement.issuer}</td>
             <td class="border border-excel-border p-2">${achievement.date}</td>
             <td class="border border-excel-border p-2">${achievement.description}</td>
         `;
-        achievementsContainer.appendChild(achievementElement);
+        
+        achievementsContainer.appendChild(achievementRow);
+    });
+}
+
+// Populate projects section
+function populateProjects() {
+    const projectsContainer = document.querySelector('#projects .grid');
+    if (!projectsContainer) return;
+    
+    // Clear existing content
+    projectsContainer.innerHTML = '';
+    
+    // Add each project from config
+    userConfig.projects.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.className = 'border border-excel-border rounded-md overflow-hidden hover:shadow-lg transition-shadow';
+        
+        projectCard.innerHTML = `
+            <div class="bg-excel-gray px-4 py-2 border-b border-excel-border">
+                <h3 class="font-bold">${project.title}</h3>
+            </div>
+            <div class="p-4">
+                <div class="mb-4 bg-gray-200 rounded-md overflow-hidden">
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-auto">
+                </div>
+                <p class="text-gray-600 mb-2">${project.title}</p>
+                <p class="mb-4">${project.description}</p>
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-2">
+                        ${project.tags.map(tag => `<span class="bg-excel-lightGreen text-excel-green px-2 py-1 rounded text-xs">${tag}</span>`).join('')}
+                    </div>
+                    <a href="${project.link}" class="text-excel-green hover:underline text-sm">View Details →</a>
+                </div>
+            </div>
+        `;
+        
+        projectsContainer.appendChild(projectCard);
     });
 }
 
@@ -369,19 +413,8 @@ function setupCellHoverEffects() {
     });
 }
 
-// Call setup functions when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    // Set user name and current year
-    document.getElementById('userName').textContent = userConfig.name;
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    
-    // Set resume link
-    const resumeLink = document.getElementById('resume-link');
-    if (resumeLink) {
-        resumeLink.href = userConfig.resumeLink;
-    }
-    
-    // Mobile menu toggle
+// Setup mobile menu functionality
+function setupMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -389,6 +422,272 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenuButton.addEventListener('click', function() {
             mobileMenu.classList.toggle('hidden');
         });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    }
+}
+
+// Setup Excel menu bar Easter eggs
+function setupExcelEasterEggs() {
+    // File menu Easter egg
+    const fileButton = document.getElementById('excel-file');
+    if (fileButton) {
+        fileButton.addEventListener('click', function() {
+            const fileMenu = document.createElement('div');
+            fileMenu.className = 'excel-menu bg-white text-black shadow-lg rounded-md absolute z-50 mt-1';
+            fileMenu.style.minWidth = '200px';
+            fileMenu.innerHTML = `
+                <div class="p-2 hover:bg-excel-hover cursor-pointer">New</div>
+                <div class="p-2 hover:bg-excel-hover cursor-pointer">Open</div>
+                <div class="p-2 hover:bg-excel-hover cursor-pointer">Save</div>
+                <div class="p-2 hover:bg-excel-hover cursor-pointer">Save As</div>
+                <div class="border-t border-excel-border my-1"></div>
+                <div class="p-2 hover:bg-excel-hover cursor-pointer">Print</div>
+                <div class="p-2 hover:bg-excel-hover cursor-pointer">Share</div>
+                <div class="border-t border-excel-border my-1"></div>
+                <div class="p-2 hover:bg-excel-hover cursor-pointer" id="excel-about">About</div>
+            `;
+            
+            // Position the menu
+            fileMenu.style.position = 'absolute';
+            fileMenu.style.left = fileButton.getBoundingClientRect().left + 'px';
+            fileMenu.style.top = (fileButton.getBoundingClientRect().bottom + window.scrollY) + 'px';
+            
+            // Add to body
+            document.body.appendChild(fileMenu);
+            
+            // Handle About click
+            const aboutButton = fileMenu.querySelector('#excel-about');
+            if (aboutButton) {
+                aboutButton.addEventListener('click', function() {
+                    showExcelDialog(
+                        'About Portfolio.xlsx',
+                        `<p class="mb-2">Portfolio.xlsx - Professional Data Analyst</p>
+                         <p class="mb-2">© ${new Date().getFullYear()} ${userConfig.name}</p>
+                         <p class="mb-2">This interactive portfolio showcases my data analysis skills and professional experience.</p>
+                         <p>I'm passionate about transforming data into actionable insights that drive business decisions.</p>`,
+                        'OK'
+                    );
+                    document.body.removeChild(fileMenu);
+                });
+            }
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function closeMenu(event) {
+                if (!fileMenu.contains(event.target) && event.target !== fileButton) {
+                    if (document.body.contains(fileMenu)) {
+                        document.body.removeChild(fileMenu);
+                    }
+                    document.removeEventListener('click', closeMenu);
+                }
+            });
+        });
+    }
+    
+    // Home menu Easter egg
+    const homeButton = document.getElementById('excel-home');
+    if (homeButton) {
+        homeButton.addEventListener('click', function() {
+            showExcelDialog(
+                'Professional Summary',
+                `<p class="mb-2">With ${userConfig.experience ? userConfig.experience.length : '5+'}+ years of experience in data analysis, I specialize in:</p>
+                 <ul class="list-disc pl-5 mb-3">
+                    <li>Transforming complex datasets into actionable business insights</li>
+                    <li>Creating interactive dashboards and visualizations</li>
+                    <li>Implementing data-driven solutions that improve efficiency</li>
+                    <li>Collaborating with cross-functional teams to drive strategic decisions</li>
+                 </ul>
+                 <p>I'm committed to continuous learning and staying current with industry best practices.</p>`,
+                'OK'
+            );
+        });
+    }
+    
+    // Insert menu Easter egg
+    const insertButton = document.getElementById('excel-insert');
+    if (insertButton) {
+        insertButton.addEventListener('click', function() {
+            showExcelDialog(
+                'Data Visualization Portfolio',
+                `<p class="mb-3">As a data analyst, I create impactful visualizations that communicate insights effectively:</p>
+                <div class="flex flex-wrap gap-4 justify-center mb-3">
+                    <div class="border border-excel-border p-3 hover:bg-excel-hover cursor-pointer rounded-md">
+                        <svg class="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M7 14L10 11L13 14L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <p class="text-center mt-1 font-semibold">Trend Analysis</p>
+                        <p class="text-center text-sm">Time-series forecasting</p>
+                    </div>
+                    <div class="border border-excel-border p-3 hover:bg-excel-hover cursor-pointer rounded-md">
+                        <svg class="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <rect x="6" y="14" width="3" height="5" fill="#217346"/>
+                            <rect x="11" y="9" width="3" height="10" fill="#217346"/>
+                            <rect x="16" y="11" width="3" height="8" fill="#217346"/>
+                        </svg>
+                        <p class="text-center mt-1 font-semibold">Comparative Analysis</p>
+                        <p class="text-center text-sm">Performance metrics</p>
+                    </div>
+                </div>
+                <p>My interactive dashboards help stakeholders make data-driven decisions with confidence.</p>`,
+                'View Projects'
+            );
+        });
+    }
+    
+    // Formulas menu Easter egg
+    const formulasButton = document.getElementById('excel-formulas');
+    if (formulasButton) {
+        formulasButton.addEventListener('click', function() {
+            showExcelDialog(
+                'Analytical Skills',
+                `<p class="font-semibold mb-3">My analytical toolkit includes:</p>
+                 <div class="grid grid-cols-2 gap-2 mb-3">
+                    <div class="border border-excel-border p-2 rounded">
+                        <p class="font-bold text-excel-green">Statistical Analysis</p>
+                        <p class="text-sm">Regression, hypothesis testing, correlation analysis</p>
+                    </div>
+                    <div class="border border-excel-border p-2 rounded">
+                        <p class="font-bold text-excel-green">Data Modeling</p>
+                        <p class="text-sm">Predictive models, segmentation, forecasting</p>
+                    </div>
+                    <div class="border border-excel-border p-2 rounded">
+                        <p class="font-bold text-excel-green">Advanced Excel</p>
+                        <p class="text-sm">VLOOKUP, Pivot Tables, Power Query, DAX</p>
+                    </div>
+                    <div class="border border-excel-border p-2 rounded">
+                        <p class="font-bold text-excel-green">Programming</p>
+                        <p class="text-sm">Python, SQL, R for data manipulation</p>
+                    </div>
+                 </div>
+                 <p>I apply these skills to extract meaningful insights from complex datasets.</p>`,
+                'OK'
+            );
+        });
+    }
+    
+    // Data menu Easter egg
+    const dataButton = document.getElementById('excel-data');
+    if (dataButton) {
+        dataButton.addEventListener('click', function() {
+            const skills = userConfig.skills.map(skill => skill.name);
+            showExcelDialog(
+                'Data-Driven Results',
+                `<p class="font-semibold mb-3">My data analysis work has delivered measurable business impact:</p>
+                 <ul class="list-disc pl-5 mb-3">
+                    <li><span class="font-bold text-excel-green">15% Revenue Growth</span> - Identified untapped market segments through customer data analysis</li>
+                    <li><span class="font-bold text-excel-green">30% Cost Reduction</span> - Optimized inventory management through predictive modeling</li>
+                    <li><span class="font-bold text-excel-green">40% Faster Reporting</span> - Automated data pipelines and created interactive dashboards</li>
+                    <li><span class="font-bold text-excel-green">25% Improved Accuracy</span> - Enhanced data quality through validation processes</li>
+                 </ul>
+                 <p>I'm passionate about translating data insights into tangible business outcomes.</p>`,
+                'Contact Me'
+            );
+        });
+    }
+    
+    // View menu Easter egg - Direct dark mode toggle
+    const viewButton = document.getElementById('excel-view');
+    if (viewButton) {
+        viewButton.addEventListener('click', function() {
+            // Immediately toggle dark mode
+            document.body.classList.toggle('excel-dark-mode');
+            
+            // Show notification based on current state
+            if (document.body.classList.contains('excel-dark-mode')) {
+                showNotification('Dark mode enabled!', 'success');
+            } else {
+                showNotification('Light mode enabled!', 'success');
+            }
+        });
+    }
+}
+
+// Show Excel-style dialog
+function showExcelDialog(title, content, buttonText) {
+    // Create dialog backdrop
+    const backdrop = document.createElement('div');
+    backdrop.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+    
+    // Create dialog
+    const dialog = document.createElement('div');
+    dialog.className = 'bg-white rounded-md shadow-lg max-w-md w-full mx-4';
+    dialog.innerHTML = `
+        <div class="bg-excel-green text-white px-4 py-2 flex justify-between items-center">
+            <h3 class="font-bold">${title}</h3>
+            <button class="excel-dialog-close focus:outline-none">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="p-4">
+            ${content}
+        </div>
+        <div class="bg-excel-gray px-4 py-3 flex justify-end">
+            <button class="excel-dialog-close bg-excel-green hover:bg-excel-darkGreen text-white px-4 py-1 rounded">${buttonText}</button>
+        </div>
+    `;
+    
+    // Add dialog to backdrop
+    backdrop.appendChild(dialog);
+    
+    // Add to body
+    document.body.appendChild(backdrop);
+    
+    // Handle close button click
+    const closeButtons = dialog.querySelectorAll('.excel-dialog-close');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            document.body.removeChild(backdrop);
+        });
+    });
+    
+    // Close on backdrop click
+    backdrop.addEventListener('click', function(event) {
+        if (event.target === backdrop) {
+            document.body.removeChild(backdrop);
+        }
+    });
+}
+
+// Call setup functions when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Set user name and current year
+    document.getElementById('userName').textContent = userConfig.name;
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Set profile photo
+    const profilePhoto = document.getElementById('profilePhoto');
+    if (profilePhoto && userConfig.profilePhoto) {
+        profilePhoto.src = userConfig.profilePhoto;
+        profilePhoto.alt = userConfig.name + ' - Profile Photo';
+    }
+    
+    // Set footer name
+    const footerName = document.getElementById('footerName');
+    if (footerName) {
+        footerName.textContent = userConfig.name;
+    }
+    
+    // Set resume link
+    const resumeLink = document.getElementById('resume-link');
+    if (resumeLink) {
+        resumeLink.href = userConfig.resumeLink;
     }
     
     // Initialize all sections with user configuration data
@@ -397,9 +696,12 @@ document.addEventListener('DOMContentLoaded', function() {
     populateExperience();
     populateEducation();
     populateAchievements();
+    populateProjects();
     
     // Set up interactive elements
     setupContactForm();
     setupCellHoverEffects();
     setupNavigation();
+    setupMobileMenu();
+    setupExcelEasterEggs();
 });

@@ -49,6 +49,65 @@ body {
     border-bottom: none;
     border-radius: 4px 4px 0 0;
     padding: 4px 12px;
+}
+
+/* Excel Dark Mode */
+.excel-dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.excel-dark-mode .bg-white {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+.excel-dark-mode .bg-excel-gray {
+    background-color: #3d3d3d;
+}
+
+.excel-dark-mode .bg-excel-lightGreen {
+    background-color: #1a5336;
+}
+
+.excel-dark-mode .border-excel-border {
+    border-color: #555555;
+}
+
+.excel-dark-mode .text-gray-600,
+.excel-dark-mode .text-gray-700 {
+    color: #bbbbbb;
+}
+
+.excel-dark-mode .text-excel-green {
+    color: #4ade80;
+}
+
+.excel-dark-mode .bg-excel-green {
+    background-color: #166534;
+}
+
+.excel-dark-mode .hover\:bg-excel-hover:hover {
+    background-color: #3d3d3d;
+}
+
+.excel-dark-mode .hover\:bg-excel-darkGreen:hover {
+    background-color: #14532d;
+}
+
+.excel-dark-mode .excel-menu {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+/* Excel Dialog Styles */
+.excel-menu {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+
+.sheet-tab {
     background-color: #F2F2F2;
 }
 
