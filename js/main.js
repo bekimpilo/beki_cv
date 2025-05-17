@@ -65,21 +65,21 @@ const userConfig = {
             title: "RSA Pharma Project",
             description: "Leveraged data analytics drive significant improvements in compliance rates and reduced system downtimes significantly, ultimately optimizing system maintenance and support costs.",
             tags: ["Product Management", "Power BI", "Tableau"],
-            link: "https://pythonandvba.com",
+            link: "https://pythonandvba.comhttps://www.spotlightnsp.co.za/2020/03/16/covid-19-is-south-africa-prepared-for-medicine-shortages/#:~:text=In%20addition%20to%20contract,and%20expected%20lead%20times.",
             image: "./images/sales-analysis.jpg"
         },
         {
             title: "Media Monitoring Dashboard",
             description: "utilising NLP techniques such as named entity recognition and sentiment analysis on news articles to identify medicines at risk of stockout.",
             tags: ["Python", "NLP","AI", "LookerStudio"],
-            link: "https://pythonandvba.com",
+            link: "https://lookerstudio.google.com/reporting/7a6dae17-2080-4a51-82d7-4e18e2302f11/page/6zXD",
             image: "./images/customer-segmentation.jpg"
         },
         {
             title: "Provider Mapping Tool",
             description: "Developed a tool to map healthcare providers using SERP API and Streamlit UI and deployed it on a free instance of Render Cloud",
             tags: ["R", "Tableau"],
-            link: "https://pythonandvba.com",
+            link: "https://providermapping.onrender.com/",
             image: "./images/forecasting-model.jpg"
         }
     ],
