@@ -65,7 +65,7 @@ const userConfig = {
             title: "RSA Pharma Project",
             description: "Leveraged data analytics drive significant improvements in compliance rates and reduced system downtimes significantly, ultimately optimizing system maintenance and support costs.",
             tags: ["Product Management", "Power BI", "Tableau"],
-            link: "https://pythonandvba.comhttps://www.spotlightnsp.co.za/2020/03/16/covid-19-is-south-africa-prepared-for-medicine-shortages/#:~:text=In%20addition%20to%20contract,and%20expected%20lead%20times.",
+            link: "https://www.spotlightnsp.co.za/2020/03/16/covid-19-is-south-africa-prepared-for-medicine-shortages/#:~:text=In%20addition%20to%20contract,and%20expected%20lead%20times.",
             image: "./images/sales-analysis.jpg"
         },
         {
