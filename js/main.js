@@ -4,26 +4,26 @@
 // Edit this section to customize your portfolio
 const userConfig = {
     // Personal Information
-    name: "John Doe",
-    title: "Data Analyst",
-    bio: "I am a data analyst with expertise in transforming complex datasets into actionable insights. My passion lies in using data visualization and statistical analysis to solve business problems.",
-    profilePhoto: "./images/profile-photo.png",
+    name: "Bekimpilo Ndlovu",
+    title: "Associate",
+    bio: "Bekimpilo is a self-starter, a fast learner, and a resourceful Data maverick and Systems thinker with a background in Actuarial Science  and  Artificial  Intelligence  and  client-facing  experience  in  both  private  and  public  sectors.  Beki  is  passionate  about channeling his deep understanding of math and his creativity towards solving socially undesirable phenomena. Beki recently qualified as an AI Auditor in the EU AI Act (FHCA) and an Expert in the AI Risk Management framework (FHTE).",
+    profilePhoto: "./images/beki.jpg",
     
     // Contact Information
-    email: "your.email@example.com",
-    phone: "+1 (123) 456-7890",
-    location: "City, Country",
+    email: "bekisesa@gmail.com",
+    phone: "+27 61 611 9681",
+    location: "Johannesburg, South Africa",
     
     // Social Media Links
-    linkedin: "https://linkedin.com/in/sven-bosau",
-    github: "https://github.com/Sven-Bo",
+    linkedin: "https://www.linkedin.com/in/bekimpilo-ndlovu-3960472a/",
+    github: "https://github.com/bekimpilo",
     x: "https://x.com/yourusername",
     
     // Resume Link
     resumeLink: "./assets/CV.pdf",
     
     // Webhook URL for contact form
-    webhookUrl: "YOUR_WEBHOOK_URL",
+    webhookUrl: "https://script.google.com/macros/s/AKfycbxaYKYOdyCfJhsY3uQx_bLWmxuSd2kg-TiC4A6kPqcMjbQxmo7eVXzomKQCkT22IlSN/exec",
     
     // Skills with descriptions
     skills: [
@@ -53,8 +53,8 @@ const userConfig = {
             icon: "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-12 w-12\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z\" /></svg>"
         },
         { 
-            name: "Statistical Analysis", 
-            description: "Hypothesis testing, regression analysis, and forecasting",
+            name: "Power Apps", 
+            description: "Developing no-code and low-code applications for business solutions",
             icon: "<svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-12 w-12\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2\" /></svg>"
         }
     ],
@@ -62,22 +62,22 @@ const userConfig = {
     // Projects
     projects: [
         {
-            title: "Sales Data Analysis",
-            description: "Analyzed 5 years of sales data to identify trends and opportunities, resulting in 15% revenue growth.",
-            tags: ["Excel", "Power BI"],
+            title: "RSA Pharma Project",
+            description: "Leveraged data analytics drive significant improvements in compliance rates and reduced system downtimes significantly, ultimately optimizing system maintenance and support costs.",
+            tags: ["Product Management", "Power BI", "Tableau"],
             link: "https://pythonandvba.com",
             image: "./images/sales-analysis.jpg"
         },
         {
-            title: "Customer Segmentation",
-            description: "Developed customer segments using clustering algorithms to optimize marketing campaigns.",
-            tags: ["Python", "SQL"],
+            title: "Media Monitoring Dashboard",
+            description: "utilising NLP techniques such as named entity recognition and sentiment analysis on news articles to identify medicines at risk of stockout.",
+            tags: ["Python", "NLP","AI", "LookerStudio"],
             link: "https://pythonandvba.com",
             image: "./images/customer-segmentation.jpg"
         },
         {
-            title: "Forecasting Model",
-            description: "Built a time-series forecasting model that improved inventory planning by 22%.",
+            title: "Provider Mapping Tool",
+            description: "Developed a tool to map healthcare providers using SERP API and Streamlit UI and deployed it on a free instance of Render Cloud",
             tags: ["R", "Tableau"],
             link: "https://pythonandvba.com",
             image: "./images/forecasting-model.jpg"
@@ -87,47 +87,53 @@ const userConfig = {
     // Experience
     experience: [
         {
-            company: "Company Name",
-            position: "Senior Data Analyst",
-            period: "Jan 2023 - Present",
-            description: "Lead data analyst responsible for creating dashboards and reports for executive team. Implemented automated reporting system that saved 10 hours per week."
+            company: "Clinton Health Access Initiative",
+            position: "Business Analyst, Associate",
+            period: "May 2018 - Present",
+            description: "Leveraged  data  analytics  drive  significant  improvements  in  compliance  rates  and  reduce  error  rates,  ultimately optimizing  system  maintenance  and  support  costs.  This  led  to  the  increase  in  compliance  rates  from  a  three-year maximum rate of 77% to 98.75%"
         },
         {
-            company: "Previous Company",
-            position: "Data Analyst",
-            period: "Mar 2020 - Dec 2022",
-            description: "Conducted market analysis and created visualizations to support business decisions. Developed SQL queries to extract and analyze customer data."
+            company: "Maksure Risk Solutions",
+            position: "Actuarial & Broking Analyst",
+            period: "January 2017 - May 2018",
+            description: "Developed  risk  profiles,  portfolio  performance  analysis,  claims  analysis,  and  cresta  zone  analysis  during  reinsurance treaty renewals for insurance companies. Engaged with underwriting managers to broker facultative reinsurance and supported Treaty reinsurance broking."
         },
         {
-            company: "First Company",
-            position: "Junior Analyst",
-            period: "Jun 2018 - Feb 2020",
-            description: "Assisted in data collection and cleaning. Created Excel models for financial forecasting."
+            company: "SolveCo Actuaries and Consultants",
+            position: "Actuarial Analyst",
+            period: "2016",
+            description: "Conducted actuarial and product testing for Sanlam life insurance subsidiaries across SADC. "
         }
     ],
     
     // Education
     education: [
         {
-            institution: "University Name",
-            degree: "Bachelor of Science in Data Science",
-            period: "2014 - 2018",
+            institution: "Universidad Politécnica de Madrid",
+            degree: "Masters Artificial Intelligence for public",
+            period: "Sept 2022 - Aug 2023",
+            description: "Graduated with honors. Relevant coursework included statistics, data mining, and machine learning."
+        },
+        {
+            institution: "National University of Science and Technology",
+            degree: "BCom (hons) Actuarial Science",
+            period: "Sept 2009 - Nov 2013",
             description: "Graduated with honors. Relevant coursework included statistics, data mining, and machine learning."
         }
-    ],
+       ],
     
     // Achievements/Certifications
     achievements: [
         {
-            title: "Microsoft Certified: Data Analyst Associate",
-            issuer: "Microsoft",
-            date: "2022",
+            title: " ForHumanity Certified Auditor- EU AI Act",
+            issuer: "ForHumanity",
+            date: "2024",
             description: "Certification validating skills in preparing, modeling, visualizing, and analyzing data using Microsoft Power BI."
         },
         {
-            title: "Google Data Analytics Professional Certificate",
-            issuer: "Google",
-            date: "2021",
+            title: "ForHumanity Trained Expert on Risk Management Framework (2023)",
+            issuer: "Forhumanity",
+            date: "2023",
             description: "Comprehensive program covering the entire data analysis process."
         }
     ]
@@ -475,9 +481,9 @@ function setupExcelEasterEggs() {
                 aboutButton.addEventListener('click', function() {
                     showExcelDialog(
                         'About Portfolio.xlsx',
-                        `<p class="mb-2">Portfolio.xlsx - Professional Data Analyst</p>
+                        `<p class="mb-2">Portfolio.xlsx - Associate</p>
                          <p class="mb-2">© ${new Date().getFullYear()} ${userConfig.name}</p>
-                         <p class="mb-2">This interactive portfolio showcases my data analysis skills and professional experience.</p>
+                         <p class="mb-2">This interactive portfolio showcases my professional experience.</p>
                          <p>I'm passionate about transforming data into actionable insights that drive business decisions.</p>`,
                         'OK'
                     );
@@ -503,7 +509,7 @@ function setupExcelEasterEggs() {
         homeButton.addEventListener('click', function() {
             showExcelDialog(
                 'Professional Summary',
-                `<p class="mb-2">With ${userConfig.experience ? userConfig.experience.length : '5+'}+ years of experience in data analysis, I specialize in:</p>
+                `<p class="mb-2">With ${userConfig.experience ? userConfig.experience.length : '7+'}+ years of experience in consulting, I specialize in:</p>
                  <ul class="list-disc pl-5 mb-3">
                     <li>Transforming complex datasets into actionable business insights</li>
                     <li>Creating interactive dashboards and visualizations</li>
